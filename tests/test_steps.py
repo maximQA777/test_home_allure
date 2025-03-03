@@ -11,8 +11,8 @@ def test_dynamic_steps():
         browser.driver.fullscreen_window()
 
     with allure.step("Ищем репозитория"):
-        s('[class="search-input"]').click()
-        s('[id="query-builder-test"]').type("eroshenkoam/allure-example").press_enter()
+        s('.search-input').click()
+        s('#query-builder-test').type("eroshenkoam/allure-example").press_enter()
 
     with allure.step("Переходим по ссылке репозитория"):
         s(by.link_text("eroshenkoam/allure-example")).click()
@@ -40,8 +40,8 @@ def open_main_page():
 
 @allure.step("Ищем репозитория {repo}")
 def search_for_repository(repo):
-    s('[class="search-input"]').click()
-    s('[id="query-builder-test"]').type(repo).press_enter()
+    s('.search-input').click()
+    s('#query-builder-test').type(repo).press_enter()
 
 @allure.step("Переходим по ссылке репозитория {repo}")
 def go_to_repository(repo):
